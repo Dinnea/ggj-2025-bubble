@@ -8,6 +8,9 @@ TagManager:
   - CinemachineTarget
   - ScreenCamera
   - cockpit_capitalLaser
+  - Surface
+  - Pillow
+  - Speedy
   layers:
   - Default
   - TransparentFX
