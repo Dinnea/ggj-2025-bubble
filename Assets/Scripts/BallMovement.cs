@@ -18,7 +18,7 @@ public class BallMovement : MonoBehaviour
 
     [SerializeField] float airTimeLimit = 1;
 
-    Action<Vector3> OnDeath;
+    public Action<Vector3> OnDeath;
 
     private void Awake()
     {
@@ -80,9 +80,7 @@ public class BallMovement : MonoBehaviour
                 OnDeath?.Invoke(transform.position);
                 Debug.Log("Die");
             }
-
         }
-
     }
 
     private void OnCollisionExit(Collision collision)
@@ -96,7 +94,6 @@ public class BallMovement : MonoBehaviour
     {
         if (other.CompareTag("Speedy"))
         {
-           
             rb.AddForce(new Vector3 (rb.velocity.x, 0, rb.velocity.z)*boost, ForceMode.Impulse);
         }
     }
