@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Surface
+{
+    Soft, Elastic, Glass, Wood, None
+}
 public class BallMovement : MonoBehaviour
 {
     Rigidbody rb;
@@ -19,7 +23,11 @@ public class BallMovement : MonoBehaviour
     [SerializeField] float airTimeLimit = 1;
 
     public Action<Vector3> OnDeath;
+    public static Action<Vector3> OnPillowDrop;
     public static Action<GameObject> OnCollected;
+    public Action<Surface> OnSurfaceChange;
+
+    Surface currentSurface = Surface.None;
 
    
 
@@ -55,29 +63,35 @@ public class BallMovement : MonoBehaviour
 
     void UpdateAirTime()
     {
-        if (!IsGrounded()) { airTime += Time.deltaTime; }
+        if (!IsGrounded()) 
+        {
+            
+                currentSurface = Surface.None;
+                OnSurfaceChange?.Invoke(currentSurface);
+            
+            airTime += Time.deltaTime; 
+        }
     }
     void Jump()
     {
         //Debug.Log(IsGrounded());
         if (IsGrounded()) rb.AddForce(new Vector3(0, jumpForce, 0));
     }
-
-    bool IsGrounded()
+    public Surface GetSurface()
+    {
+        return currentSurface;
+    }
+    public bool IsGrounded()
     {
         return (Physics.Raycast(transform.position, Vector3.down, 1f));
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.CompareTag("Pillow"))
+        Surface oldSurface = currentSurface;
+        //If you hit a hard surface, you die. MUAHAHA
+        if (collision.collider.GetComponent<HardSurface>())
         {
-            rb.angularDrag = pillowFriction;
-        }
-
-        if (collision.collider.CompareTag("Surface"))
-        {
-            Debug.Log(airTime);
             if (airTime > airTimeLimit)
             {
 
@@ -86,11 +100,32 @@ public class BallMovement : MonoBehaviour
             }
             else airTime = 0;
         }
+
+        if (collision.collider.CompareTag("Soft"))
+        {            
+            rb.angularDrag = pillowFriction;
+            OnPillowDrop?.Invoke(transform.position);
+            currentSurface = Surface.Soft;
+        }
+        else if (collision.collider.CompareTag("Wood"))
+        {
+            currentSurface = Surface.Wood;
+        }
+        else if (collision.collider.CompareTag("Slippery"))
+        {
+            currentSurface = Surface.Glass;
+        }
+        else if (collision.collider.CompareTag("Elastic"))
+        {
+            currentSurface =  Surface.Elastic;
+        }
+        if (currentSurface != oldSurface) OnSurfaceChange?.Invoke(currentSurface);
+
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        if (collision.collider.CompareTag("Pillow"))
+        if (collision.collider.CompareTag("Soft"))
         {
             rb.angularDrag = originalDrag;
         }

@@ -517,6 +517,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3023873857885118872, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3023873857885118872, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3023873857885118872, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6163440017665214320, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -569,6 +581,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6849608478292410662, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
+      propertyPath: rollSoft
+      value: 
+      objectReference: {fileID: 8300000, guid: a8607474fbfcd924aac8b731183335e8, type: 3}
+    - target: {fileID: 6849608478292410662, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
+      propertyPath: rollWood
+      value: 
+      objectReference: {fileID: 8300000, guid: 30c046b7b78d764488e31e7a901898d6, type: 3}
+    - target: {fileID: 6849608478292410662, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6849608478292410662, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
+      propertyPath: rollGlass
+      value: 
+      objectReference: {fileID: 8300000, guid: f847165c2d11e954992290a87b8db97b, type: 3}
     - target: {fileID: 7141641334212378235, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
       propertyPath: boost
       value: 5
@@ -581,6 +609,10 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 400
       objectReference: {fileID: 0}
+    - target: {fileID: 7141641334212378235, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
+      propertyPath: airTimeLimit
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7234587610208443163, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -592,6 +624,14 @@ PrefabInstance:
     - target: {fileID: 7384944277155409874, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8797055123924734942, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
+      propertyPath: m_Name
+      value: MovementSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086841648277995755, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
+      propertyPath: Priority
+      value: 254
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1333,8 +1373,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: SFX_Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 5744264782743681283, guid: a6b6dfeffb5e8a1488aa517b54d2fdb8, type: 3}
+      propertyPath: sourceSFX
+      value: 
+      objectReference: {fileID: 6960050089563751515, guid: be8402efe44468e488e9ef94eae4789a, type: 3}
+    - target: {fileID: 5744264782743681283, guid: a6b6dfeffb5e8a1488aa517b54d2fdb8, type: 3}
+      propertyPath: collectSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b855ef84adfa124481316a8cd299e9f, type: 3}
+    - target: {fileID: 5744264782743681283, guid: a6b6dfeffb5e8a1488aa517b54d2fdb8, type: 3}
+      propertyPath: pillowImpacts.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5744264782743681283, guid: a6b6dfeffb5e8a1488aa517b54d2fdb8, type: 3}
+      propertyPath: pillowImpacts.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 218bcf7a8a789cb4f9e9be2177af8cf5, type: 3}
+    - target: {fileID: 5744264782743681283, guid: a6b6dfeffb5e8a1488aa517b54d2fdb8, type: 3}
+      propertyPath: pillowImpacts.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1e05d46b3ed389a4eb91f34c6f190279, type: 3}
+    - target: {fileID: 5744264782743681283, guid: a6b6dfeffb5e8a1488aa517b54d2fdb8, type: 3}
+      propertyPath: pillowImpacts.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 89d8d3fba66ea9f428e48e586d0a6809, type: 3}
+    - target: {fileID: 5744264782743681283, guid: a6b6dfeffb5e8a1488aa517b54d2fdb8, type: 3}
+      propertyPath: pillowImpacts.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9bfeb96ae6542dc40b14802b84c26f76, type: 3}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3487474124319937197, guid: a6b6dfeffb5e8a1488aa517b54d2fdb8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6b6dfeffb5e8a1488aa517b54d2fdb8, type: 3}
