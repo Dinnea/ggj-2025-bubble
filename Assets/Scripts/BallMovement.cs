@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,6 +21,8 @@ public class BallMovement : MonoBehaviour
 
     [SerializeField] float airTimeLimit = 1;
 
+    Action<Vector3> OnDeath;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -41,8 +44,18 @@ public class BallMovement : MonoBehaviour
         {
             Jump();
         }
+
+        UpdateAirTime();
     }
 
+    void UpdateAirTime()
+    {
+        if (!IsGrounded()) { airTime += Time.deltaTime; }
+        else
+        {
+            airTime = 0;
+        }
+    }
     void Jump()
     {
         //Debug.Log(IsGrounded());
@@ -63,7 +76,16 @@ public class BallMovement : MonoBehaviour
             rb.angularDrag = pillowFriction;
         }
 
-       
+        if (collision.collider.CompareTag("Surface"))
+        {
+            if (airTime > airTimeLimit)
+            {
+                OnDeath?.Invoke(transform.position);
+                Debug.Log("Die");
+            }
+
+        }
+
     }
 
     private void OnCollisionExit(Collision collision)
