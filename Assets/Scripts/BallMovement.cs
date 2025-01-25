@@ -14,9 +14,6 @@ public class BallMovement : MonoBehaviour
     [SerializeField] float boost = 10;
 
     float originalDrag;
-
-    bool isGrounded = false;
-
     float airTime;
 
     [SerializeField] float airTimeLimit = 1;
@@ -100,7 +97,7 @@ public class BallMovement : MonoBehaviour
         if (other.CompareTag("Speedy"))
         {
            
-            rb.AddForce(rb.velocity*boost, ForceMode.Impulse);
+            rb.AddForce(new Vector3 (rb.velocity.x, 0, rb.velocity.z)*boost, ForceMode.Impulse);
         }
     }
 }

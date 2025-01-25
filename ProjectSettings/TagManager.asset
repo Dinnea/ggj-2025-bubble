@@ -12,6 +12,7 @@ TagManager:
   - Pillow
   - Speedy
   - Normal
+  - Collectible
   layers:
   - Default
   - TransparentFX
