@@ -18,7 +18,10 @@ public class BallMovement : MonoBehaviour
 
     [SerializeField] float airTimeLimit = 1;
 
-    Action<Vector3> OnDeath;
+    public Action<Vector3> OnDeath;
+    public static Action<GameObject> OnCollected;
+
+   
 
     private void Awake()
     {
@@ -28,14 +31,7 @@ public class BallMovement : MonoBehaviour
 
     private void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
-
-        Vector3 movement = new Vector3(horizontal, 0, vertical);
-
-        rb.AddForce(movement * baseForce);
-        //Debug.Log(rb.velocity.magnitude);
+       Movement();
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -45,25 +41,31 @@ public class BallMovement : MonoBehaviour
         UpdateAirTime();
     }
 
+    void Movement()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
+
+        Vector3 movement = new(horizontal, 0, vertical);
+
+        if (IsGrounded()) rb.AddForce(movement * baseForce);
+        //else Debug.Log("Nope");
+    }
+
     void UpdateAirTime()
     {
         if (!IsGrounded()) { airTime += Time.deltaTime; }
-        else
-        {
-            airTime = 0;
-        }
     }
     void Jump()
     {
         //Debug.Log(IsGrounded());
-        //if (isGrounded) rb.AddForce(new Vector3(0, jumpForce, 0));
         if (IsGrounded()) rb.AddForce(new Vector3(0, jumpForce, 0));
     }
 
     bool IsGrounded()
     {
-        Debug.DrawRay(transform.position, Vector3.down * transform.localScale.x / 2, Color.red);
-        return (Physics.Raycast(transform.position, Vector3.down, transform.localScale.x/2));
+        return (Physics.Raycast(transform.position, Vector3.down, 1f));
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -75,14 +77,15 @@ public class BallMovement : MonoBehaviour
 
         if (collision.collider.CompareTag("Surface"))
         {
+            Debug.Log(airTime);
             if (airTime > airTimeLimit)
             {
+
                 OnDeath?.Invoke(transform.position);
                 Debug.Log("Die");
             }
-
+            else airTime = 0;
         }
-
     }
 
     private void OnCollisionExit(Collision collision)
@@ -96,8 +99,13 @@ public class BallMovement : MonoBehaviour
     {
         if (other.CompareTag("Speedy"))
         {
-           
             rb.AddForce(new Vector3 (rb.velocity.x, 0, rb.velocity.z)*boost, ForceMode.Impulse);
+        }
+
+        if (other.CompareTag("Collectible"))
+        {
+            Debug.Log("contact");
+            OnCollected?.Invoke(other.gameObject);
         }
     }
 }
