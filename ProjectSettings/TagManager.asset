@@ -5,14 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - MainLight
-  - CinemachineTarget
   - ScreenCamera
-  - cockpit_capitalLaser
-  - Surface
   - Pillow
   - Speedy
   - Collectible
   - Soft
+  - Slippery
+  - Elastic
+  - Wood
   layers:
   - Default
   - TransparentFX
