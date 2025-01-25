@@ -10,6 +10,6 @@ public class FollowScript : MonoBehaviour
 
     private void Update()
     {
-        transform.position = followTarget.transform.position + offset;
+        if (followTarget != null) transform.position = followTarget.transform.position + offset;
     }
 }

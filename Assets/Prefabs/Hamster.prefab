@@ -445,9 +445,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f16942129f743a47853bda32f89970e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rollWood: {fileID: 0}
-  rollGlass: {fileID: 0}
-  rollSoft: {fileID: 0}
+  rollWood: {fileID: 8300000, guid: 30c046b7b78d764488e31e7a901898d6, type: 3}
+  rollGlass: {fileID: 8300000, guid: f847165c2d11e954992290a87b8db97b, type: 3}
+  rollSoft: {fileID: 8300000, guid: a8607474fbfcd924aac8b731183335e8, type: 3}
   rollElastic: {fileID: 0}
 --- !u!82 &3023873857885118872
 AudioSource:

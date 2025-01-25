@@ -44,4 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b21a6926414b5794d8df6495650febf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectSFX: {fileID: 0}
+  sourceSFX: {fileID: 6960050089563751515, guid: be8402efe44468e488e9ef94eae4789a, type: 3}
+  collectSFX: {fileID: 8300000, guid: 5b855ef84adfa124481316a8cd299e9f, type: 3}
+  deathSFX: {fileID: 8300000, guid: 9916fd4d18a69c9428b23141fb6fd1a6, type: 3}
+  elasticImpactSFX: {fileID: 8300000, guid: 564c04ffdd6289747b5a27125d2d5b93, type: 3}
+  woodImpacySFX: {fileID: 8300000, guid: 13eac160089435c468e63fec36972327, type: 3}
+  glassImpactSFX: {fileID: 8300000, guid: 13eac160089435c468e63fec36972327, type: 3}
+  pillowImpacts:
+  - {fileID: 8300000, guid: 218bcf7a8a789cb4f9e9be2177af8cf5, type: 3}
+  - {fileID: 8300000, guid: 1e05d46b3ed389a4eb91f34c6f190279, type: 3}
+  - {fileID: 8300000, guid: 89d8d3fba66ea9f428e48e586d0a6809, type: 3}
+  - {fileID: 8300000, guid: 9bfeb96ae6542dc40b14802b84c26f76, type: 3}
