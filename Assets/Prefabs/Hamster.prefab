@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4447425326357884672}
   - component: {fileID: 5167223963797972461}
   - component: {fileID: 1961593408253074823}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Low_Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 7394664716425550204}
   - component: {fileID: 2899196537567629132}
   - component: {fileID: 8413118269004919456}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Low_RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 310331211375108540}
   - component: {fileID: 2321653456519366285}
   - component: {fileID: 8034214797407938712}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Low_LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6516619573437533511}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hamster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3672426331226151306}
   - component: {fileID: 1979943487334639701}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hampter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 5428825024171222985}
   - component: {fileID: 7141641334212378235}
   - component: {fileID: 7287185881064894449}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hamster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 2.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 7234587610208443163}
   - component: {fileID: 6388741897101488720}
   - component: {fileID: 6704222289345795167}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HamsterBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -525,7 +525,7 @@ GameObject:
   - component: {fileID: 5456337191274026755}
   - component: {fileID: 72915297837933171}
   - component: {fileID: 4001815577399741421}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Low_LeftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +608,7 @@ GameObject:
   - component: {fileID: 9205472317522223910}
   - component: {fileID: 7982887749894581206}
   - component: {fileID: 8842291595198021304}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Low_RightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

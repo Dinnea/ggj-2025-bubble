@@ -11,8 +11,8 @@ TagManager:
   - Surface
   - Pillow
   - Speedy
-  - Normal
   - Collectible
+  - Soft
   layers:
   - Default
   - TransparentFX
