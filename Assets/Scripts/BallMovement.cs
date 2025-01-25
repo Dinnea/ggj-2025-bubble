@@ -7,10 +7,22 @@ public enum Surface
 {
     Soft, Elastic, Glass, Wood, None
 }
+public class JumpInfo
+{
+    public Surface surface;
+    public Vector3 location;
+
+    public JumpInfo(Surface pSurface, Vector3 pLocation)
+    {
+        surface = pSurface;
+        location = pLocation;
+    }
+}
 public class BallMovement : MonoBehaviour
 {
     Rigidbody rb;
     [SerializeField] float baseForce = 1;
+    [SerializeField] float airModifier = 0.25f;
     [SerializeField] float jumpForce = 100;
 
     [SerializeField] float pillowFriction = 20;
@@ -22,8 +34,8 @@ public class BallMovement : MonoBehaviour
 
     [SerializeField] float airTimeLimit = 1;
 
-    public Action<Vector3> OnDeath;
-    public static Action<Vector3> OnPillowDrop;
+    public static Action<Vector3> OnDeath;
+    public static Action<JumpInfo> OnDrop;
     public static Action<GameObject> OnCollected;
     public Action<Surface> OnSurfaceChange;
 
@@ -58,6 +70,7 @@ public class BallMovement : MonoBehaviour
         Vector3 movement = new(horizontal, 0, vertical);
 
         if (IsGrounded()) rb.AddForce(movement * baseForce);
+        else rb.AddForce(movement * baseForce*airModifier);
         //else Debug.Log("Nope");
     }
 
@@ -74,7 +87,6 @@ public class BallMovement : MonoBehaviour
     }
     void Jump()
     {
-        //Debug.Log(IsGrounded());
         if (IsGrounded()) rb.AddForce(new Vector3(0, jumpForce, 0));
     }
     public Surface GetSurface()
@@ -89,22 +101,11 @@ public class BallMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Surface oldSurface = currentSurface;
-        //If you hit a hard surface, you die. MUAHAHA
-        if (collision.collider.GetComponent<HardSurface>())
-        {
-            if (airTime > airTimeLimit)
-            {
-
-                OnDeath?.Invoke(transform.position);
-                Debug.Log("Die");
-            }
-            else airTime = 0;
-        }
 
         if (collision.collider.CompareTag("Soft"))
-        {            
+        {
+            Debug.Log(rb.velocity.y);
             rb.angularDrag = pillowFriction;
-            OnPillowDrop?.Invoke(transform.position);
             currentSurface = Surface.Soft;
         }
         else if (collision.collider.CompareTag("Wood"))
@@ -120,6 +121,28 @@ public class BallMovement : MonoBehaviour
             currentSurface =  Surface.Elastic;
         }
         if (currentSurface != oldSurface) OnSurfaceChange?.Invoke(currentSurface);
+
+        //If you hit a hard surface, you die. MUAHAHA
+        if (collision.collider.GetComponent<HardSurface>())
+        {
+            if (airTime > airTimeLimit)
+            {
+
+                OnDeath?.Invoke(transform.position);
+                Debug.Log("Die");
+                Destroy(gameObject);
+            }
+            else if (airTime > 0)
+            {
+                OnDrop?.Invoke(new JumpInfo(currentSurface, transform.position));
+            }
+            airTime = 0;
+        }
+        else if (airTime > 0)
+        {
+            OnDrop?.Invoke(new JumpInfo(currentSurface, transform.position));
+        }
+        airTime = 0;
 
     }
 
