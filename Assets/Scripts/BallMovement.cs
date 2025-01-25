@@ -132,8 +132,13 @@ public class BallMovement : MonoBehaviour
                 Debug.Log("Die");
                 Destroy(gameObject);
             }
+            else if (airTime > 0)
+            {
+                OnDrop?.Invoke(new JumpInfo(currentSurface, transform.position));
+            }
+            airTime = 0;
         }
-        if (airTime > 0)
+        else if (airTime > 0)
         {
             OnDrop?.Invoke(new JumpInfo(currentSurface, transform.position));
         }
