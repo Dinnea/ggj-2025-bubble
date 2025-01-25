@@ -125,6 +125,7 @@ public class BallMovement : MonoBehaviour
         //If you hit a hard surface, you die. MUAHAHA
         if (collision.collider.GetComponent<HardSurface>())
         {
+            Debug.Log(airTime);
             if (airTime > airTimeLimit)
             {
 
