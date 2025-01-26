@@ -51,7 +51,8 @@ public class BallMovement : MonoBehaviour
 
     private void Update()
     {
-       Movement();
+        //Movement();
+        MovementInCameraDir();
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -61,6 +62,28 @@ public class BallMovement : MonoBehaviour
         UpdateAirTime();
     }
 
+    void MovementInCameraDir()
+    {
+        Camera cam = Camera.main;
+        Vector3 forwardVec = new Vector3(cam.transform.forward.x, 0, cam.transform.forward.z);
+        Vector3 rightVec = new Vector3(cam.transform.right.x, 0, cam.transform.right.z);
+        if (Input.GetKey(KeyCode.W)) 
+        {
+            rb.AddForce(forwardVec * baseForce);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            rb.AddForce(-rightVec * baseForce);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            rb.AddForce(-forwardVec * baseForce);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            rb.AddForce(rightVec * baseForce);
+        }
+    }
     void Movement()
     {
         float horizontal = Input.GetAxis("Horizontal");

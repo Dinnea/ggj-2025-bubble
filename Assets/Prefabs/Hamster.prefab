@@ -407,11 +407,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ceee826ff3c8741957baea992458b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseForce: 2
-  jumpForce: 250
+  baseForce: 4
+  airModifier: 1
+  jumpForce: 400
   pillowFriction: 20
-  boost: 10
-  airTimeLimit: 1
+  boost: 5
+  airTimeLimit: 2
 --- !u!135 &7287185881064894449
 SphereCollider:
   m_ObjectHideFlags: 0

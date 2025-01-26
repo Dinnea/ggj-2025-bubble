@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6912267542204895612}
   - component: {fileID: 1452723960003030949}
   - component: {fileID: 2089825167076601863}
+  - component: {fileID: 9045206655401225296}
   m_Layer: 0
   m_Name: Fridge_Door
-  m_TagString: Untagged
+  m_TagString: Slippery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,6 +84,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &9045206655401225296
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598494737293533639}
+  m_Material: {fileID: 13400000, guid: b3846ba72698f5b40b59430cd446a1e5, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4430101094871144783, guid: a7d26ea1a03678146acf9afe715de133, type: 3}
 --- !u!1 &1897573029609905333
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,9 +117,10 @@ GameObject:
   - component: {fileID: 4952899848527575347}
   - component: {fileID: 1816390171744767387}
   - component: {fileID: 8476811197679934137}
+  - component: {fileID: 4328162638063109420}
   m_Layer: 0
   m_Name: Fridge_Lower
-  m_TagString: Untagged
+  m_TagString: Slippery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,6 +190,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4328162638063109420
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897573029609905333}
+  m_Material: {fileID: 13400000, guid: b3846ba72698f5b40b59430cd446a1e5, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3353050871677150663, guid: a7d26ea1a03678146acf9afe715de133, type: 3}
 --- !u!1 &6700773904133453448
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,9 +223,10 @@ GameObject:
   - component: {fileID: 3606209539261138418}
   - component: {fileID: 2230839826442525920}
   - component: {fileID: 4693372244701863539}
+  - component: {fileID: 3565387977338352579}
   m_Layer: 0
   m_Name: Fridge_Main
-  m_TagString: Untagged
+  m_TagString: Slippery
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,3 +298,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3565387977338352579
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6700773904133453448}
+  m_Material: {fileID: 13400000, guid: b3846ba72698f5b40b59430cd446a1e5, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5761623228079517111, guid: a7d26ea1a03678146acf9afe715de133, type: 3}

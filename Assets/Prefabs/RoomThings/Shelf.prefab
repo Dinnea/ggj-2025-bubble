@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shelf
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 29f61f87e50f5f345afe742731fbcbd8, type: 3}
+      propertyPath: m_TagString
+      value: Wood
+      objectReference: {fileID: 0}
     - target: {fileID: 6124318214771875837, guid: 29f61f87e50f5f345afe742731fbcbd8, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -75,5 +79,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -3225959511443494117, guid: 29f61f87e50f5f345afe742731fbcbd8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8780087012760766483}
   m_SourcePrefab: {fileID: 100100000, guid: 29f61f87e50f5f345afe742731fbcbd8, type: 3}
+--- !u!1 &3883013416783268191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3225959511443494117, guid: 29f61f87e50f5f345afe742731fbcbd8, type: 3}
+  m_PrefabInstance: {fileID: 7410720241055916612}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &8780087012760766483
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3883013416783268191}
+  m_Material: {fileID: 13400000, guid: 4706b321d54b41d4fac7a8cfb19eabc5, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4552961407312753236, guid: 29f61f87e50f5f345afe742731fbcbd8, type: 3}

@@ -416,7 +416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &784478877
 RectTransform:
   m_ObjectHideFlags: 0
@@ -619,7 +619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5428825024171222985, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
       propertyPath: m_AngularDrag
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6163440017665214320, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
       propertyPath: m_IsActive
@@ -671,26 +671,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6827461800841438529, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
       propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7141641334212378235, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
-      propertyPath: boost
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7141641334212378235, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
-      propertyPath: baseForce
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7141641334212378235, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
-      propertyPath: jumpForce
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 7141641334212378235, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
-      propertyPath: airModifier
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7141641334212378235, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}
-      propertyPath: airTimeLimit
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7234587610208443163, guid: 8881be69555b73e4aa993ac67e55a08b, type: 3}

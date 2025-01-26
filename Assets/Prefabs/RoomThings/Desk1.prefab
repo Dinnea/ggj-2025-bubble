@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 761972782242045651}
   - component: {fileID: 3983591384808558674}
   - component: {fileID: 2980283748525400097}
+  - component: {fileID: 7076751670873845545}
   m_Layer: 0
   m_Name: Desk1
   m_TagString: Untagged
@@ -83,6 +84,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7076751670873845545
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3927141693229701924}
+  m_Material: {fileID: 13400000, guid: 4706b321d54b41d4fac7a8cfb19eabc5, type: 2}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2533523198237221573, guid: cdb19c7e584a6944dbdf6a0c312213e5, type: 3}
 --- !u!1 &4061905550280002383
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +117,7 @@ GameObject:
   - component: {fileID: 3680876029373633013}
   m_Layer: 0
   m_Name: Desk1
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
